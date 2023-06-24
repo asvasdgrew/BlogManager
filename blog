@@ -1,0 +1,26 @@
+class BlogManager:
+    def __init__(self):
+        self.posts = []
+
+    def create_post(self, title, content):
+        post = {"title": title, "content": content}
+        self.posts.append(post)
+        print(f"Post '{title}' created successfully.")
+
+    def view_posts(self):
+        if not self.posts:
+            print("No posts created.")
+        else:
+            print("Posts:")
+            for post in self.posts:
+                print(f"Title: {post['title']}")
+                print(f"Content: {post['content']}")
+                print()
+
+if __name__ == '__main__':
+    blog_manager = BlogManager()
+
+    blog_manager.create_post("First Post", "This is my first blog post.")
+    blog_manager.create_post("Second Post", "This is my second blog post.")
+
+    blog_manager.view_posts()
